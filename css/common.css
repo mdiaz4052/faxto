@@ -48,3 +48,42 @@ body::before {
   font-weight: 400;
   color: var(--mute);
 }
+
+/*
+ * The exported HTML supplies 1000 × 1000 intrinsic dimensions to prevent
+ * layout shift. These rules explicitly control the rendered dimensions so
+ * those attributes cannot leave an unintended 1000px-tall image behind.
+ */
+.home-page .album > .art-link {
+  width: 132px;
+  max-width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  align-self: start;
+}
+
+.home-page .album .cover {
+  display: block;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.home-page .single-cover {
+  display: block;
+}
+
+.release-page .rel-cover {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+@media (max-width: 600px) {
+  .home-page .album > .art-link {
+    width: 150px;
+  }
+}
