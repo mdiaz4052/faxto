@@ -1,0 +1,34 @@
+name: Import Claude export
+
+on:
+  push:
+    branches:
+      - claude-release-pages
+    paths:
+      - scripts/import_claude_export.py
+      - .github/workflows/import-claude-export.yml
+
+permissions:
+  contents: write
+
+jobs:
+  import:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out import branch
+        uses: actions/checkout@v4
+        with:
+          ref: claude-release-pages
+
+      - name: Generate organized site files
+        run: python scripts/import_claude_export.py
+
+      - name: Commit organized export
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Add release pages and disclosure" || exit 0
+          git push origin HEAD:claude-release-pages
