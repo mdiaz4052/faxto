@@ -1,0 +1,34 @@
+name: Add FaXto favicon
+
+on:
+  push:
+    branches:
+      - music-note-favicon
+    paths:
+      - scripts/add_favicon.py
+      - .github/workflows/add-favicon.yml
+
+permissions:
+  contents: write
+
+jobs:
+  install:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out favicon branch
+        uses: actions/checkout@v4
+        with:
+          ref: music-note-favicon
+
+      - name: Add favicon to every page
+        run: python scripts/add_favicon.py
+
+      - name: Commit favicon files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Add FaXto musical-note favicon" || exit 0
+          git push origin HEAD:music-note-favicon
