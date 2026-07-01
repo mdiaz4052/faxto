@@ -1,11 +1,13 @@
-document.documentElement.classList.add("js");
-
-document.addEventListener("DOMContentLoaded", () => {
+(() => {
+  const reduceMotion =
+    window.matchMedia &&
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const items = document.querySelectorAll(".reveal");
-  const reduceMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
+
+  const reveal = (element) => element.classList.add("in");
 
   if (reduceMotion || !("IntersectionObserver" in window)) {
-    items.forEach((item) => item.classList.add("in"));
+    items.forEach(reveal);
     return;
   }
 
@@ -14,15 +16,15 @@ document.addEventListener("DOMContentLoaded", () => {
     return rect.top < window.innerHeight && rect.bottom > 0;
   };
 
-  items.forEach((item) => {
-    if (inView(item)) item.classList.add("in");
+  items.forEach((element) => {
+    if (inView(element)) reveal(element);
   });
 
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add("in");
+          reveal(entry.target);
           observer.unobserve(entry.target);
         }
       });
@@ -30,5 +32,8 @@ document.addEventListener("DOMContentLoaded", () => {
     { threshold: 0.12, rootMargin: "0px 0px -8% 0px" },
   );
 
-  items.forEach((item) => observer.observe(item));
-});
+  items.forEach((element) => observer.observe(element));
+
+  // Fail open if a browser delays observer callbacks.
+  window.setTimeout(() => items.forEach(reveal), 1600);
+})();

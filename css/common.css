@@ -1,0 +1,89 @@
+:root {
+  --void: #09090B;
+  --panel: #121116;
+  --line: #26242E;
+  --bone: #EDE8DC;
+  --mute: #8C8779;
+  --gild: #C6A04A;
+  --gild-soft: rgba(198, 160, 74, .16);
+  --grain-opacity: .045;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--void);
+  color: var(--bone);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(1.05rem, .6rem + .9vw, 1.25rem);
+  line-height: 1.7;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: var(--grain-opacity);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.mono {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  text-transform: uppercase;
+  letter-spacing: .22em;
+  font-size: .7rem;
+  font-weight: 400;
+  color: var(--mute);
+}
+
+/*
+ * The exported HTML supplies 1000 × 1000 intrinsic dimensions to prevent
+ * layout shift. These rules explicitly control the rendered dimensions so
+ * those attributes cannot leave an unintended 1000px-tall image behind.
+ */
+.home-page .album > .art-link {
+  width: 132px;
+  max-width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  align-self: start;
+}
+
+.home-page .album .cover {
+  display: block;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.home-page .single-cover {
+  display: block;
+}
+
+.release-page .rel-cover {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+@media (max-width: 600px) {
+  .home-page .album > .art-link {
+    width: 150px;
+  }
+}
