@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&amp;family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+  :root{
+    --void:#09090B;
+    --panel:#121116;
+    --line:#26242E;
+    --bone:#EDE8DC;
+    --mute:#8C8779;
+    --gild:#C6A04A;
+    --gild-soft:rgba(198,160,74,.16);
+    --grain-opacity:.045;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    background:var(--void);
+    color:var(--bone);
+    font-family:"Cormorant Garamond",Georgia,serif;
+    font-size:clamp(1.05rem,.6rem + .9vw,1.25rem);
+    line-height:1.7;
+    font-weight:400;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  body::before{
+    content:"";
+    position:fixed;inset:0;z-index:0;pointer-events:none;
+    opacity:var(--grain-opacity);
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  .wrap{position:relative;z-index:1;max-width:780px;margin:0 auto;padding:0 28px}
+
+  .mono{font-family:"JetBrains Mono",ui-monospace,monospace;text-transform:uppercase;letter-spacing:.22em;font-size:.7rem;font-weight:400;color:var(--mute)}
+  .cinzel{font-family:"Cinzel",serif}
+  .gild{color:var(--gild)}
+
+  .hero{min-height:88vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:120px 0 80px}
+  .hero .eyebrow{margin-bottom:2.4rem}
+  .wordmark{
+    font-family:"Cinzel",serif;font-weight:600;
+    font-size:clamp(3.4rem,2rem + 13vw,8.5rem);
+    letter-spacing:.14em;line-height:.95;
+    color:var(--bone);
+    text-indent:.14em;
+  }
+  .hero .tagline{margin-top:2.2rem;color:var(--mute)}
+  .scrollcue{margin-top:5rem;display:inline-block}
+  .scrollcue .bar{display:block;width:1px;height:46px;margin:.9rem auto 0;background:linear-gradient(var(--gild),transparent)}
+
+  .section{padding:78px 0;border-top:1px solid var(--line)}
+  .eyebrow{display:flex;align-items:baseline;gap:.9em}
+  .eyebrow .num{color:var(--gild);font-weight:500}
+  .lead{margin-top:1.8rem}
+  .lead p{margin-bottom:1.15rem;font-size:clamp(1.18rem,.7rem + 1.1vw,1.45rem);line-height:1.66}
+  .lead p:last-child{margin-bottom:0}
+
+  .album{display:grid;grid-template-columns:132px 1fr;gap:30px;padding:34px 0;border-bottom:1px solid var(--line)}
+  .album:first-of-type{padding-top:34px}
+  .album:last-of-type{border-bottom:none}
+  .plate{
+    position:relative;aspect-ratio:1;border:1px solid var(--line);background:var(--panel);
+    display:flex;align-items:center;justify-content:center;overflow:hidden;
+    background-image:radial-gradient(120% 120% at 50% 0%,var(--gild-soft),transparent 60%);
+  }
+  .plate .sigil{font-family:"Cinzel",serif;font-size:3.4rem;font-weight:500;color:rgba(237,232,220,.10);user-select:none}
+  .plate .tick{position:absolute;width:9px;height:9px;border:1px solid var(--gild);opacity:.5}
+  .plate .tick.tl{top:8px;left:8px;border-right:0;border-bottom:0}
+  .plate .tick.br{bottom:8px;right:8px;border-left:0;border-top:0}
+  .cover{aspect-ratio:1;object-fit:cover;border:1px solid var(--line);width:100%}
+
+  .album h3{font-family:"Cinzel",serif;font-weight:500;font-size:1.55rem;letter-spacing:.06em;line-height:1.15;transition:color .25s ease}
+  .album .meta{margin-top:.55rem}
+  .album .blurb{margin-top:.75rem;font-style:italic;color:#cfc9bb;font-size:1.12rem;line-height:1.5}
+  .tracks{margin-top:.9rem;font-family:"JetBrains Mono",monospace;font-size:.66rem;letter-spacing:.12em;line-height:1.9;color:var(--mute);text-transform:uppercase}
+  .tracks .dot{color:var(--gild);opacity:.6;padding:0 .2em}
+
+  .listen{display:inline-block;margin-top:1.25rem;font-family:"JetBrains Mono",monospace;text-transform:uppercase;letter-spacing:.2em;font-size:.68rem;color:var(--bone);text-decoration:none;border:1px solid var(--gild);padding:.7em 1.3em;transition:background .25s ease,color .25s ease}
+  .listen:hover,.listen:focus-visible{background:var(--gild);color:var(--void)}
+  .listen .arr{transition:transform .25s ease;display:inline-block}
+  .listen:hover .arr{transform:translateX(4px)}
+  .soon{display:inline-block;margin-top:1.25rem;font-family:"JetBrains Mono",monospace;text-transform:uppercase;letter-spacing:.2em;font-size:.68rem;color:var(--mute);border:1px dashed var(--line);padding:.7em 1.3em}
+
+  .single{display:flex;align-items:center;gap:22px;padding:22px 0;border-bottom:1px solid var(--line)}
+  .single:first-of-type{padding-top:30px}
+  .single:last-of-type{border-bottom:none}
+  .single-cover{width:78px;height:78px;flex:none;object-fit:cover;border:1px solid var(--line)}
+  .single-body{flex:1;min-width:0}
+  .single-head{display:flex;justify-content:space-between;align-items:baseline;gap:18px;flex-wrap:wrap}
+  .single h3{font-family:"Cinzel",serif;font-weight:500;font-size:1.28rem;letter-spacing:.06em;line-height:1.2}
+  .single .meta{margin-top:.45rem}
+  .listen.sm{margin-top:0;padding:.55em 1em;font-size:.64rem;flex:none}
+
+  footer{border-top:1px solid var(--line);padding:60px 0 80px;text-align:center}
+  .foot-mark{font-family:"Cinzel",serif;letter-spacing:.2em;font-size:1.1rem;color:var(--bone)}
+  .foot-tag{margin-top:.7rem;color:var(--mute)}
+  .foot-links{margin-top:2rem;display:flex;gap:1.8rem;justify-content:center;flex-wrap:wrap}
+  .foot-links a{font-family:"JetBrains Mono",monospace;text-transform:uppercase;letter-spacing:.2em;font-size:.66rem;color:var(--mute);text-decoration:none;border-bottom:1px solid transparent;padding-bottom:2px;transition:color .2s,border-color .2s}
+  .foot-links a:hover,.foot-links a:focus-visible{color:var(--gild);border-color:var(--gild)}
+  .foot-fine{margin-top:2.4rem;font-family:"JetBrains Mono",monospace;font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:#54514a}
+
+  .reveal{opacity:1;transform:none}
+  .js .reveal{opacity:0;transform:translateY(14px);transition:opacity .8s ease,transform .8s ease}
+  .js .reveal.in{opacity:1;transform:none}
+
+  a:focus-visible,.listen:focus-visible{outline:2px solid var(--gild);outline-offset:3px}
+
+  @media (max-width:600px){
+    .album{grid-template-columns:1fr;gap:20px}
+    .plate,.cover{max-width:150px}
+    .section{padding:60px 0}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .js .reveal{opacity:1;transform:none;transition:none}
+    .listen .arr,.album h3{transition:none}
+  }
+</style>
+</helmet>
+
+<div class="wrap">
+
+  <header class="hero">
+    <div class="eyebrow mono reveal" style="justify-content:center"><span>Experimental Absurdist</span></div>
+    <h1 class="wordmark reveal">FaXto</h1>
+    <div class="tagline mono reveal">A subject of the Grand Cosmic Void</div>
+    <span class="scrollcue reveal"><span class="mono">below</span><span class="bar"></span></span>
+  </header>
+
+  <section class="section">
+    <div class="eyebrow mono reveal"><span class="num cinzel">I</span><span>story</span></div>
+    <div class="lead reveal">
+      <p>FaXto is an experimental electronic project — absurdist in spirit, liturgical in form. It takes the universe at its word: a <span class="gild">Grand Cosmic Void</span> that promises nothing and explains less, and it sings back regardless. Meaning isn't found here so much as declared, in full view of its absence.</p>
+      <p>The songs read like liturgy for people who lost the faith and kept the grammar — sacred forms run through machine production. Each record is less an argument than a confrontation: faith, doubt, and the silence behind both, given a pulse.</p>
+      <p>This is the home for that work. Everything is below. More is coming.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="eyebrow mono reveal"><span class="num cinzel">II</span><span>discography</span></div>
+
+    <article class="album reveal">
+      <img class="cover" src="covers/singularity.jpg" alt="Singularity cover — a glowing orange singularity knot">
+      <div>
+        <h3>SINGULARITY</h3>
+        <div class="meta mono">debut <span style="color:var(--gild)">·</span> 7 movements</div>
+        <p class="blurb">Entropy, gravity, and the void, set to a pulse.</p>
+        <div class="tracks">Entropy Love<span class="dot">·</span>Gravity<span class="dot">·</span>Distilling the Void<span class="dot">·</span>Self-Checkout<span class="dot">·</span>Defect Condensate<span class="dot">·</span>But I Know<span class="dot">·</span>A Trillion Infinite Nothings</div>
+        <a class="listen" href="https://artists.landr.com/singularity" target="_blank" rel="noopener" aria-label="Listen on LANDR"><span style="font-size:1.5em;line-height:1;letter-spacing:.05em">𝄞𝄢</span></a>
+      </div>
+    </article>
+
+    <article class="album reveal">
+      <img class="cover" src="covers/sacrilegium.jpg" alt="Sacrilegium cover — a monstrance on a marble altar">
+      <div>
+        <h3>SACRILEGIUM</h3>
+        <div class="meta mono">latest release <span style="color:var(--gild)">·</span> 7 movements</div>
+        <p class="blurb">An absurdist liturgy — belief and its undoing, voiced at once.</p>
+        <div class="tracks">Hollow Show<span class="dot">·</span>Paper Crowns<span class="dot">·</span>Mithras<span class="dot">·</span>Syntax<span class="dot">·</span>Adversity<span class="dot">·</span>Divine Absurd<span class="dot">·</span>Commandments</div>
+        <a class="listen" href="https://artists.landr.com/sacrilegium" target="_blank" rel="noopener" aria-label="Listen on LANDR"><span style="font-size:1.5em;line-height:1;letter-spacing:.05em">𝄞𝄢</span></a>
+      </div>
+    </article>
+
+    
+
+  </section>
+
+  <section class="section">
+    <div class="eyebrow mono reveal"><span class="num cinzel">III</span><span>singles</span></div>
+
+    <article class="single reveal">
+      <img class="single-cover" src="covers/deluded.jpg" alt="Deluded cover — shattered mirror">
+      <div class="single-body">
+        <div class="single-head">
+          <h3>Deluded</h3>
+          <a class="listen sm" href="https://artists.landr.com/deluded" target="_blank" rel="noopener" aria-label="Listen on LANDR"><span style="font-size:1.5em;line-height:1;letter-spacing:.05em">𝄞𝄢</span></a>
+        </div>
+        <div class="meta mono">single</div>
+      </div>
+    </article>
+
+    <article class="single reveal">
+      <img class="single-cover" src="covers/both-sides.jpg" alt="Both Sides cover — a scale weighing a heart against a page">
+      <div class="single-body">
+        <div class="single-head">
+          <h3>Both Sides</h3>
+          <a class="listen sm" href="https://artists.landr.com/faxto.both-sides" target="_blank" rel="noopener" aria-label="Listen on LANDR"><span style="font-size:1.5em;line-height:1;letter-spacing:.05em">𝄞𝄢</span></a>
+        </div>
+        <div class="meta mono">single</div>
+      </div>
+    </article>
+
+    <article class="single reveal">
+      <img class="single-cover" src="covers/hymns.jpg" alt="Hymns cover — a shattering mechanical dove">
+      <div class="single-body">
+        <div class="single-head">
+          <h3>Hymns</h3>
+          <a class="listen sm" href="https://artists.landr.com/hymns" target="_blank" rel="noopener" aria-label="Listen on LANDR"><span style="font-size:1.5em;line-height:1;letter-spacing:.05em">𝄞𝄢</span></a>
+        </div>
+        <div class="meta mono">single</div>
+      </div>
+    </article>
+
+    <article class="single reveal">
+      <img class="single-cover" src="covers/heresy-parade.jpg" alt="Heresy Parade cover — line drawing of Adam reaching to a horned figure">
+      <div class="single-body">
+        <div class="single-head">
+          <h3>Heresy Parade</h3>
+          <a class="listen sm" href="https://artists.landr.com/heresy-parade" target="_blank" rel="noopener" aria-label="Listen on LANDR"><span style="font-size:1.5em;line-height:1;letter-spacing:.05em">𝄞𝄢</span></a>
+        </div>
+        <div class="meta mono">single</div>
+      </div>
+    </article>
+
+  </section>
+
+  <footer>
+    <div class="foot-mark reveal">FaXto</div>
+    <div class="foot-tag mono reveal">A subject of the Grand Cosmic Void</div>
+    <nav class="foot-links reveal">
+      
+      
+      <a href="mailto:faxto.music@gmail.com">contact</a>
+    </nav>
+    <div class="foot-fine reveal">catalog signature — 129.2 bpm &nbsp;·&nbsp; made with Suno AI &nbsp;·&nbsp; © 2026 FaXto</div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;$preview&quot;: {&quot;width&quot;: &quot;100%&quot;, &quot;height&quot;: 900},
+  &quot;accentColor&quot;: {&quot;editor&quot;: &quot;color&quot;, &quot;default&quot;: &quot;#C6A04A&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Theme&quot;},
+  &quot;grainOn&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Theme&quot;}
+}">
+class Component extends DCLogic {
+  constructor(props){
+    super(props);
+    if (typeof document !== 'undefined') document.documentElement.classList.add('js');
+  }
+  hexToRgba(hex, a){
+    var h = String(hex || '').replace('#','');
+    if(h.length===3) h = h.split('').map(function(c){return c+c;}).join('');
+    var n = parseInt(h,16);
+    if(isNaN(n)) return 'rgba(198,160,74,'+a+')';
+    return 'rgba('+((n>>16)&255)+','+((n>>8)&255)+','+(n&255)+','+a+')';
+  }
+  applyTheme(){
+    var root = document.documentElement;
+    var accent = this.props.accentColor || '#C6A04A';
+    root.style.setProperty('--gild', accent);
+    root.style.setProperty('--gild-soft', this.hexToRgba(accent, .16));
+    root.style.setProperty('--grain-opacity', this.props.grainOn === false ? '0' : '.045');
+  }
+  setupReveal(){
+    var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var items = document.querySelectorAll(".reveal");
+    if(reduce || !("IntersectionObserver" in window)){
+      items.forEach(function(el){el.classList.add("in")});
+      return;
+    }
+    var reveal = function(el){ el.classList.add("in"); };
+    var inView = function(el){
+      var r = el.getBoundingClientRect();
+      return r.top < (window.innerHeight || 0) && r.bottom > 0;
+    };
+    // Reveal anything already on screen immediately (IO may not fire on mount).
+    items.forEach(function(el){ if(inView(el)) reveal(el); });
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ reveal(e.target); io.unobserve(e.target); }
+      });
+    },{threshold:.12, rootMargin:"0px 0px -8% 0px"});
+    items.forEach(function(el){io.observe(el)});
+    // Safety net: if IO never delivers, ensure nothing stays hidden.
+    setTimeout(function(){ items.forEach(reveal); }, 1600);
+  }
+  componentDidMount(){
+    this.applyTheme();
+    this.setupReveal();
+  }
+  componentDidUpdate(){ this.applyTheme(); }
+  renderVals(){ return {}; }
+}
+</script>
+</body>
+</html>
