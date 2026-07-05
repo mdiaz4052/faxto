@@ -1,0 +1,34 @@
+name: Import release lyrics update
+
+on:
+  push:
+    branches:
+      - release-lyrics-update
+    paths:
+      - scripts/import_release_lyrics_update.py
+      - .github/workflows/import-release-lyrics-update.yml
+
+permissions:
+  contents: write
+
+jobs:
+  import:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out update branch
+        uses: actions/checkout@v4
+        with:
+          ref: release-lyrics-update
+
+      - name: Import uploaded release pages
+        run: python scripts/import_release_lyrics_update.py
+
+      - name: Commit release updates
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Add release lyrics and stories" || exit 0
+          git push origin HEAD:release-lyrics-update
