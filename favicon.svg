@@ -1,7 +1,31 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="32" fill="#070709"/>
-  <circle cx="32" cy="32" r="22" fill="none" stroke="#ff6238" stroke-width="1.5"/>
-  <path d="M19 32h26M32 19v26" stroke="#eeeae0" stroke-opacity=".35"/>
-  <circle cx="32" cy="32" r="8" fill="#ff6238"/>
-  <text x="32" y="37" text-anchor="middle" font-family="Georgia,serif" font-size="16" fill="#070709">F</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">FaXto singularity favicon</title>
+  <desc id="desc">A minimalist bronze orbital flower surrounding a circular core.</desc>
+
+  <g fill="none" stroke="#A87945" stroke-width="13" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Repeated orbital petal -->
+    <defs>
+      <path id="orbit" d="M256 66
+        C315 115 337 188 321 256
+        C305 324 283 397 256 446
+        C229 397 207 324 191 256
+        C175 188 197 115 256 66 Z"/>
+    </defs>
+
+    <use href="#orbit"/>
+    <use href="#orbit" transform="rotate(45 256 256)"/>
+    <use href="#orbit" transform="rotate(90 256 256)"/>
+    <use href="#orbit" transform="rotate(135 256 256)"/>
+
+    <!-- Secondary inner orbit set for the layered character of the source mark -->
+    <g stroke-width="7" opacity="0.82" transform="scale(.88) translate(34.91 34.91)">
+      <use href="#orbit"/>
+      <use href="#orbit" transform="rotate(45 256 256)"/>
+      <use href="#orbit" transform="rotate(90 256 256)"/>
+      <use href="#orbit" transform="rotate(135 256 256)"/>
+    </g>
+
+    <!-- Central void/core -->
+    <circle cx="256" cy="256" r="72" stroke-width="15"/>
+  </g>
 </svg>
