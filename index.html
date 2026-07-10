@@ -9,8 +9,10 @@
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/common.css">
   <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/orbital-field.css">
   <script>document.documentElement.classList.add('js')</script>
   <script src="js/reveal.js" defer></script>
+  <script src="js/orbital-field.js" defer></script>
 </head>
 <body class="home-page">
   <a class="skip-link" href="#main">Skip to the work</a>
@@ -41,18 +43,23 @@
         </div>
       </div>
 
-      <div class="hero-visual reveal" aria-label="Abstract orbital visualization representing FaXto's Grand Cosmic Void">
-        <div class="void-engine" data-parallax>
-          <span class="orbit orbit-a"></span>
-          <span class="orbit orbit-b"></span>
-          <span class="orbit orbit-c"></span>
-          <span class="crosshair crosshair-x"></span>
-          <span class="crosshair crosshair-y"></span>
-          <span class="event-horizon"></span>
-          <span class="core">F</span>
-          <span class="coordinate coordinate-a">129.2 BPM</span>
-          <span class="coordinate coordinate-b">42.50° N</span>
-          <span class="coordinate coordinate-c">VOID / 02</span>
+      <div class="hero-visual reveal" aria-label="Interactive quantum orbital visualization representing FaXto's Grand Cosmic Void">
+        <div class="quantum-orbital" data-orbital-field data-state="0" tabindex="0" role="group" aria-describedby="orbital-instructions">
+          <canvas aria-hidden="true"></canvas>
+          <span class="orbital-axis orbital-axis-x" aria-hidden="true"></span>
+          <span class="orbital-axis orbital-axis-y" aria-hidden="true"></span>
+          <span class="orbital-nucleus" aria-hidden="true">F</span>
+          <div class="orbital-readout" aria-hidden="true">
+            <strong data-orbital-name>Ψ 1S / VOID CLOUD</strong>
+            <span data-orbital-detail>ISOTROPIC · GROUND STATE</span>
+          </div>
+          <div class="orbital-selector" role="group" aria-label="Orbital visualization">
+            <button type="button" class="is-active" data-orbital-mode="0" aria-pressed="true">1S</button>
+            <button type="button" data-orbital-mode="1" aria-pressed="false" tabindex="-1">2P</button>
+            <button type="button" data-orbital-mode="2" aria-pressed="false" tabindex="-1">3D</button>
+          </div>
+          <p class="orbital-gesture" aria-hidden="true">Move · tap · swipe</p>
+          <p class="sr-only" id="orbital-instructions">Move the pointer to rotate and disturb the electron field. Tap, swipe, use the orbital buttons, or press the arrow keys to change orbital states.</p>
         </div>
         <a class="latest-signal" href="releases/sacrilegium.html">
           <span class="signal-label">Latest transmission</span>

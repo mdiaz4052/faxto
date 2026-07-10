@@ -1,0 +1,50 @@
+.quantum-orbital{
+  --glow-x:50%;
+  --glow-y:50%;
+  --tilt-x:0deg;
+  --tilt-y:0deg;
+  --axis-x:0deg;
+  --axis-y:0deg;
+  position:relative;
+  width:min(42vw,560px);
+  aspect-ratio:1;
+  overflow:hidden;
+  border:1px solid var(--line-strong);
+  border-radius:50%;
+  isolation:isolate;
+  cursor:crosshair;
+  touch-action:pan-y;
+  background:
+    radial-gradient(circle at var(--glow-x) var(--glow-y),rgba(255,98,56,.16),transparent 18%),
+    radial-gradient(circle at 50% 50%,rgba(255,255,255,.035),transparent 42%),
+    repeating-radial-gradient(circle,transparent 0 48px,rgba(255,255,255,.035) 49px 50px),
+    #09090d;
+  box-shadow:inset 0 0 80px rgba(0,0,0,.76),0 0 0 1px rgba(255,255,255,.025);
+  transform:perspective(900px) rotateX(var(--tilt-x)) rotateY(var(--tilt-y));
+  transition:transform .22s ease-out,border-color .25s,box-shadow .25s;
+}
+.quantum-orbital:focus-visible{outline:2px solid var(--ember);outline-offset:7px}
+.quantum-orbital:hover{border-color:rgba(255,98,56,.52);box-shadow:inset 0 0 90px rgba(0,0,0,.78),0 0 50px rgba(255,98,56,.08)}
+.quantum-orbital::before,.quantum-orbital::after{content:"";position:absolute;z-index:1;pointer-events:none;border-radius:50%}
+.quantum-orbital::before{inset:8%;border:1px dashed rgba(238,234,224,.15);animation:quantum-spin 36s linear infinite}
+.quantum-orbital::after{inset:29%;border:1px solid rgba(255,98,56,.26);box-shadow:0 0 34px rgba(255,98,56,.08);animation:quantum-spin 24s linear infinite reverse}
+.quantum-orbital canvas{position:absolute;inset:0;z-index:2;width:100%;height:100%}
+.orbital-axis{position:absolute;z-index:1;left:50%;top:50%;pointer-events:none;background:rgba(238,234,224,.09);transform-origin:center}
+.orbital-axis-x{width:112%;height:1px;transform:translate(-50%,-50%) rotate(var(--axis-x))}
+.orbital-axis-y{width:1px;height:112%;transform:translate(-50%,-50%) rotate(var(--axis-y))}
+.orbital-nucleus{position:absolute;z-index:4;left:50%;top:50%;display:grid;place-items:center;width:18%;aspect-ratio:1;border:1px solid rgba(238,234,224,.34);border-radius:50%;transform:translate(-50%,-50%);background:radial-gradient(circle at 38% 33%,#ffd1c3 0 2%,#ff8e70 3% 9%,var(--ember) 10% 20%,#6c241c 46%,#08080b 76%);box-shadow:0 0 36px rgba(255,98,56,.34),inset -13px -11px 24px #000;color:rgba(255,255,255,.82);font:600 clamp(1.7rem,3.5vw,3.2rem)/1 var(--serif);text-shadow:0 0 18px rgba(255,255,255,.38);transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s}
+.quantum-orbital[data-state="1"] .orbital-nucleus{transform:translate(-50%,-50%) scale(.82);box-shadow:0 0 48px rgba(255,98,56,.42),inset -13px -11px 24px #000}
+.quantum-orbital[data-state="2"] .orbital-nucleus{transform:translate(-50%,-50%) scale(.68);box-shadow:0 0 62px rgba(255,98,56,.48),inset -13px -11px 24px #000}
+.orbital-readout{position:absolute;z-index:5;left:8%;right:8%;top:8%;display:flex;justify-content:space-between;gap:1rem;pointer-events:none;font:500 .52rem var(--mono);letter-spacing:.13em;text-transform:uppercase;color:var(--ash)}
+.orbital-readout strong{max-width:55%;color:var(--paper-dim);font-weight:500}
+.orbital-readout span{text-align:right}
+.orbital-selector{position:absolute;z-index:6;left:50%;bottom:7%;display:flex;gap:.35rem;padding:.32rem;border:1px solid var(--line);border-radius:999px;background:rgba(7,7,9,.68);backdrop-filter:blur(12px);transform:translateX(-50%)}
+.orbital-selector button{min-width:2.75rem;padding:.45rem .62rem;border:0;border-radius:999px;background:transparent;color:var(--ash);cursor:pointer;font:500 .54rem var(--mono);letter-spacing:.12em;transition:background .2s,color .2s,transform .2s}
+.orbital-selector button:hover,.orbital-selector button:focus-visible{color:var(--paper)}
+.orbital-selector button.is-active{background:var(--paper);color:var(--void);transform:scale(1.03)}
+.orbital-gesture{position:absolute;z-index:5;right:8%;bottom:17%;margin:0;pointer-events:none;font:500 .47rem var(--mono);letter-spacing:.12em;text-transform:uppercase;color:#66625d}
+.sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+@keyframes quantum-spin{to{transform:rotate(360deg)}}
+@media(max-width:1050px){.quantum-orbital{width:min(76vw,540px)}}
+@media(max-width:680px){.quantum-orbital{width:88vw;touch-action:pan-y}.orbital-readout{top:7%;font-size:.46rem}.orbital-readout span{display:none}.orbital-gesture{right:auto;left:8%;bottom:17%;font-size:.43rem}.orbital-selector{bottom:6%}}
+@media(prefers-reduced-motion:reduce){.quantum-orbital{transform:none}.quantum-orbital::before,.quantum-orbital::after{animation:none}}
