@@ -56,6 +56,7 @@
     canvas.style.height = `${height}px`;
     context.setTransform(dpr, 0, 0, dpr, 0, 0);
     buildParticles();
+    window.cancelAnimationFrame(frame);
     draw(performance.now());
   };
 
@@ -169,7 +170,7 @@
     controls.forEach((control, index) => {
       const selected = index === mode;
       control.classList.toggle('is-active', selected);
-      control.setAttribute('aria-selected', String(selected));
+      control.setAttribute('aria-pressed', String(selected));
       control.tabIndex = selected ? 0 : -1;
     });
     if (shouldPulse) pulse = 1;
@@ -181,8 +182,12 @@
     pointer.targetX = ((event.clientX - rect.left) / rect.width - 0.5) * 2;
     pointer.targetY = ((event.clientY - rect.top) / rect.height - 0.5) * 2;
     pointer.active = true;
-    field.style.setProperty('--pointer-x', pointer.targetX.toFixed(3));
-    field.style.setProperty('--pointer-y', pointer.targetY.toFixed(3));
+    field.style.setProperty('--glow-x', `${50 + pointer.targetX * 8}%`);
+    field.style.setProperty('--glow-y', `${50 + pointer.targetY * 8}%`);
+    field.style.setProperty('--tilt-x', `${pointer.targetY * -2.25}deg`);
+    field.style.setProperty('--tilt-y', `${pointer.targetX * 2.25}deg`);
+    field.style.setProperty('--axis-x', `${pointer.targetY * 3}deg`);
+    field.style.setProperty('--axis-y', `${pointer.targetX * -3}deg`);
     if (reduceMotion) {
       pointer.x = pointer.targetX;
       pointer.y = pointer.targetY;
@@ -195,8 +200,12 @@
     pointer.targetX = 0;
     pointer.targetY = 0;
     pointer.active = false;
-    field.style.setProperty('--pointer-x', '0');
-    field.style.setProperty('--pointer-y', '0');
+    field.style.setProperty('--glow-x', '50%');
+    field.style.setProperty('--glow-y', '50%');
+    field.style.setProperty('--tilt-x', '0deg');
+    field.style.setProperty('--tilt-y', '0deg');
+    field.style.setProperty('--axis-x', '0deg');
+    field.style.setProperty('--axis-y', '0deg');
   });
 
   field.addEventListener('pointerdown', (event) => {
