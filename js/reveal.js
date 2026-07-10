@@ -1,39 +1,41 @@
 (() => {
-  const reduceMotion =
-    window.matchMedia &&
-    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const items = document.querySelectorAll(".reveal");
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const reveals = [...document.querySelectorAll('.reveal')];
 
-  const reveal = (element) => element.classList.add("in");
-
-  if (reduceMotion || !("IntersectionObserver" in window)) {
-    items.forEach(reveal);
-    return;
+  if (reduceMotion || !('IntersectionObserver' in window)) {
+    reveals.forEach((node) => node.classList.add('in'));
+  } else {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('in');
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+    reveals.forEach((node) => observer.observe(node));
+    window.setTimeout(() => reveals.forEach((node) => node.classList.add('in')), 1800);
   }
 
-  const inView = (element) => {
-    const rect = element.getBoundingClientRect();
-    return rect.top < window.innerHeight && rect.bottom > 0;
-  };
+  const sections = [...document.querySelectorAll('main section[id]')];
+  const navLinks = [...document.querySelectorAll('.site-nav a')];
+  if (sections.length && navLinks.length && 'IntersectionObserver' in window) {
+    const sectionObserver = new IntersectionObserver((entries) => {
+      const visible = entries.filter((entry) => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+      if (!visible) return;
+      navLinks.forEach((link) => link.classList.toggle('active', link.hash === `#${visible.target.id}`));
+    }, { threshold: [0.25, 0.5, 0.75] });
+    sections.forEach((section) => sectionObserver.observe(section));
+  }
 
-  items.forEach((element) => {
-    if (inView(element)) reveal(element);
-  });
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          reveal(entry.target);
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.12, rootMargin: "0px 0px -8% 0px" },
-  );
-
-  items.forEach((element) => observer.observe(element));
-
-  // Fail open if a browser delays observer callbacks.
-  window.setTimeout(() => items.forEach(reveal), 1600);
+  const parallax = document.querySelector('[data-parallax]');
+  if (parallax && !reduceMotion && matchMedia('(pointer:fine)').matches) {
+    const visual = parallax.parentElement;
+    visual.addEventListener('pointermove', (event) => {
+      const rect = visual.getBoundingClientRect();
+      const x = ((event.clientX - rect.left) / rect.width - 0.5) * 10;
+      const y = ((event.clientY - rect.top) / rect.height - 0.5) * 10;
+      parallax.style.transform = `perspective(900px) rotateX(${-y * 0.35}deg) rotateY(${x * 0.35}deg) translate3d(${x}px, ${y}px, 0)`;
+    });
+    visual.addEventListener('pointerleave', () => { parallax.style.transform = ''; });
+  }
 })();

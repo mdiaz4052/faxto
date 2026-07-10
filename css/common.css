@@ -1,89 +1,48 @@
-:root {
-  --void: #09090B;
-  --panel: #121116;
-  --line: #26242E;
-  --bone: #EDE8DC;
-  --mute: #8C8779;
-  --gild: #C6A04A;
-  --gild-soft: rgba(198, 160, 74, .16);
-  --grain-opacity: .045;
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500;1,600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600&display=swap');
+
+:root{
+  --void:#070709;
+  --void-2:#0d0d12;
+  --panel:#111117;
+  --paper:#eeeae0;
+  --paper-dim:#c9c4ba;
+  --ash:#8c8983;
+  --line:rgba(238,234,224,.16);
+  --line-strong:rgba(238,234,224,.32);
+  --ember:#ff6238;
+  --ember-soft:rgba(255,98,56,.16);
+  --rose:#c38b7d;
+  --display:"Space Grotesk",Arial,sans-serif;
+  --serif:"Cormorant Garamond",Georgia,serif;
+  --mono:"JetBrains Mono",ui-monospace,monospace;
+  --max:1440px;
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--void);color:var(--paper);font-family:var(--display);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opacity:.045;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.8'/%3E%3C/svg%3E")}
+a{color:inherit}
+img{max-width:100%}
+button,input,textarea,select{font:inherit}
+::selection{background:var(--ember);color:#090909}
+.skip-link{position:fixed;left:1rem;top:1rem;z-index:100;transform:translateY(-180%);padding:.75rem 1rem;background:var(--paper);color:var(--void);text-decoration:none;font:500 .72rem var(--mono);text-transform:uppercase;letter-spacing:.12em}.skip-link:focus{transform:none}
+.kicker,.mono{margin:0;font:500 .65rem var(--mono);text-transform:uppercase;letter-spacing:.2em;color:var(--ash)}
+.kicker::before{content:"";display:inline-block;width:2.4rem;height:1px;margin:0 .8rem .2rem 0;background:var(--ember)}
+.button{display:inline-flex;align-items:center;justify-content:space-between;gap:2rem;min-width:13rem;padding:.9rem 1rem;border:1px solid var(--line-strong);font:500 .7rem var(--mono);letter-spacing:.12em;text-transform:uppercase;text-decoration:none;transition:background .25s,color .25s,border-color .25s,transform .25s}
+.button:hover,.button:focus-visible{transform:translateY(-2px)}
+.button-primary{background:var(--paper);color:var(--void);border-color:var(--paper)}
+.button-primary:hover,.button-primary:focus-visible{background:var(--ember);border-color:var(--ember)}
+.button-quiet:hover,.button-quiet:focus-visible{border-color:var(--ember);color:var(--ember)}
+.text-link{display:inline-flex;justify-content:space-between;gap:2rem;padding:.7rem 0;border-bottom:1px solid var(--line);font:500 .68rem var(--mono);letter-spacing:.12em;text-transform:uppercase;text-decoration:none;transition:color .2s,border-color .2s}.text-link:hover,.text-link:focus-visible{color:var(--ember);border-color:var(--ember)}
+:focus-visible{outline:2px solid var(--ember);outline-offset:4px}
+.reveal{opacity:1;transform:none}.js .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}.js .reveal.in{opacity:1;transform:none}
 
-html {
-  -webkit-text-size-adjust: 100%;
-}
+/* Shared release and disclosure foundations */
+.release-page,.disclosure-page{min-height:100vh;background:radial-gradient(circle at 80% 0,var(--ember-soft),transparent 34%),var(--void)}
+.release-page .wrap,.disclosure-page .wrap{position:relative;z-index:1;max-width:1080px;margin:auto;padding:0 32px 64px}
+.rel-top{padding:30px 0}.back{display:inline-flex;align-items:center;gap:.7rem;color:var(--ash);font:500 .65rem var(--mono);letter-spacing:.16em;text-transform:uppercase;text-decoration:none}.back:hover{color:var(--ember)}
+.gild,.dot{color:var(--ember)}
 
-body {
-  background: var(--void);
-  color: var(--bone);
-  font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: clamp(1.05rem, .6rem + .9vw, 1.25rem);
-  line-height: 1.7;
-  font-weight: 400;
-  -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
-}
-
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  opacity: var(--grain-opacity);
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-}
-
-.mono {
-  font-family: "JetBrains Mono", ui-monospace, monospace;
-  text-transform: uppercase;
-  letter-spacing: .22em;
-  font-size: .7rem;
-  font-weight: 400;
-  color: var(--mute);
-}
-
-/*
- * The exported HTML supplies 1000 × 1000 intrinsic dimensions to prevent
- * layout shift. These rules explicitly control the rendered dimensions so
- * those attributes cannot leave an unintended 1000px-tall image behind.
- */
-.home-page .album > .art-link {
-  width: 132px;
-  max-width: 100%;
-  aspect-ratio: 1 / 1;
-  overflow: hidden;
-  align-self: start;
-}
-
-.home-page .album .cover {
-  display: block;
-  width: 100%;
-  height: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-}
-
-.home-page .single-cover {
-  display: block;
-}
-
-.release-page .rel-cover {
-  display: block;
-  width: 100%;
-  height: auto;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-}
-
-@media (max-width: 600px) {
-  .home-page .album > .art-link {
-    width: 150px;
-  }
-}
+@media(max-width:720px){.button{width:100%}.release-page .wrap,.disclosure-page .wrap{padding-inline:20px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.js .reveal{opacity:1;transform:none;transition:none}*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}}
