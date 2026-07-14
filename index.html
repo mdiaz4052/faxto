@@ -9,8 +9,10 @@
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/common.css">
   <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/cosmic-field.css">
   <script>document.documentElement.classList.add('js')</script>
   <script src="js/reveal.js" defer></script>
+  <script src="js/cosmic-field.js" defer></script>
 </head>
 <body class="home-page">
   <a class="skip-link" href="#main">Skip to the work</a>
@@ -41,18 +43,18 @@
         </div>
       </div>
 
-      <div class="hero-visual reveal" aria-label="Abstract orbital visualization representing FaXto's Grand Cosmic Void">
-        <div class="void-engine" data-parallax>
-          <span class="orbit orbit-a"></span>
-          <span class="orbit orbit-b"></span>
-          <span class="orbit orbit-c"></span>
-          <span class="crosshair crosshair-x"></span>
-          <span class="crosshair crosshair-y"></span>
-          <span class="event-horizon"></span>
-          <span class="core">F</span>
-          <span class="coordinate coordinate-a">129.2 BPM</span>
-          <span class="coordinate coordinate-b">42.50° N</span>
-          <span class="coordinate coordinate-c">VOID / 02</span>
+      <div class="hero-visual reveal" aria-label="Interactive psychedelic cosmic field representing FaXto's Grand Cosmic Void">
+        <div class="cosmic-field" data-cosmic-field tabindex="0" role="group" aria-describedby="cosmic-field-instructions">
+          <canvas aria-hidden="true"></canvas>
+          <span class="cosmic-axis cosmic-axis-x" aria-hidden="true"></span>
+          <span class="cosmic-axis cosmic-axis-y" aria-hidden="true"></span>
+          <div class="cosmic-modes" role="group" aria-label="Cosmic field modes">
+            <button type="button" class="is-active" data-cosmic-mode="0" aria-label="Cosmic mode 1" aria-pressed="true"></button>
+            <button type="button" data-cosmic-mode="1" aria-label="Cosmic mode 2" aria-pressed="false" tabindex="-1"></button>
+            <button type="button" data-cosmic-mode="2" aria-label="Cosmic mode 3" aria-pressed="false" tabindex="-1"></button>
+          </div>
+          <p class="cosmic-gesture" aria-hidden="true">Hover · swipe</p>
+          <p class="sr-only" id="cosmic-field-instructions">Move the pointer to tilt and disturb the cosmic field. Swipe horizontally on touch screens, use the circular controls, or press the left and right arrow keys to change visual modes.</p>
         </div>
         <a class="latest-signal" href="releases/sacrilegium.html">
           <span class="signal-label">Latest transmission</span>
