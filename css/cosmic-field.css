@@ -1,0 +1,126 @@
+.cosmic-field{
+  --tilt-x:0deg;
+  --tilt-y:0deg;
+  position:relative;
+  width:min(44vw,620px);
+  aspect-ratio:1;
+  border:1px solid var(--line);
+  border-radius:50%;
+  overflow:hidden;
+  isolation:isolate;
+  outline:none;
+  touch-action:pan-y;
+  background:
+    radial-gradient(circle at 50% 50%,rgba(255,255,255,.02),transparent 58%),
+    radial-gradient(circle at 56% 46%,rgba(255,85,192,.08),transparent 18%),
+    radial-gradient(circle at 44% 56%,rgba(58,225,255,.06),transparent 20%);
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,.03),
+    0 0 60px rgba(109,104,255,.10),
+    0 0 90px rgba(255,85,192,.07);
+  transform:perspective(960px) rotateX(var(--tilt-y)) rotateY(var(--tilt-x));
+  transition:transform .25s ease-out,box-shadow .25s ease-out;
+}
+.cosmic-field:focus-visible{
+  box-shadow:
+    0 0 0 2px #7ee6ff,
+    0 0 80px rgba(116,224,255,.14);
+}
+.cosmic-field::before,
+.cosmic-field::after{
+  content:"";
+  position:absolute;
+  z-index:2;
+  border-radius:50%;
+  pointer-events:none;
+}
+.cosmic-field::before{
+  inset:7%;
+  border:1px solid rgba(255,255,255,.10);
+  opacity:.45;
+}
+.cosmic-field::after{
+  inset:17%;
+  border:1px dashed rgba(188,146,255,.24);
+  opacity:.6;
+}
+.cosmic-field canvas{
+  position:absolute;
+  inset:0;
+  display:block;
+  width:100%;
+  height:100%;
+}
+.cosmic-axis{
+  position:absolute;
+  z-index:2;
+  pointer-events:none;
+  background:var(--line);
+  opacity:.5;
+}
+.cosmic-axis-x{left:7%;right:7%;top:50%;height:1px}
+.cosmic-axis-y{top:7%;bottom:7%;left:50%;width:1px}
+.cosmic-modes{
+  position:absolute;
+  left:1rem;
+  top:1rem;
+  z-index:5;
+  display:flex;
+  gap:.55rem;
+}
+.cosmic-modes button{
+  width:14px;
+  height:14px;
+  padding:0;
+  border:1px solid rgba(255,255,255,.3);
+  border-radius:50%;
+  appearance:none;
+  cursor:pointer;
+  background:rgba(255,255,255,.18);
+  transition:transform .2s,border-color .2s,box-shadow .2s;
+}
+.cosmic-modes button:hover,
+.cosmic-modes button:focus-visible{
+  transform:scale(1.18);
+  border-color:rgba(255,255,255,.72);
+}
+.cosmic-modes button.is-active{
+  border-color:rgba(255,255,255,.7);
+  background:linear-gradient(135deg,#ff4fc8,#6ce0ff 55%,#ffe46b);
+  box-shadow:
+    0 0 12px rgba(120,220,255,.35),
+    0 0 18px rgba(255,94,202,.25);
+}
+.cosmic-gesture{
+  position:absolute;
+  right:1rem;
+  bottom:1rem;
+  z-index:5;
+  margin:0;
+  font:500 .56rem var(--mono);
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--ash);
+}
+.sr-only{
+  position:absolute!important;
+  width:1px!important;
+  height:1px!important;
+  padding:0!important;
+  margin:-1px!important;
+  overflow:hidden!important;
+  clip:rect(0,0,0,0)!important;
+  white-space:nowrap!important;
+  border:0!important;
+}
+@media(max-width:1050px){
+  .cosmic-field{width:min(78vw,580px)}
+}
+@media(max-width:680px){
+  .cosmic-field{width:90vw}
+  .cosmic-modes{left:.8rem;top:.8rem}
+  .cosmic-gesture{right:.8rem;bottom:.8rem}
+}
+@media(prefers-reduced-motion:reduce){
+  .cosmic-field{transform:none!important;transition:none}
+}
