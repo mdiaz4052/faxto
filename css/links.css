@@ -1,0 +1,21 @@
+.links-page{min-height:100vh;background:radial-gradient(circle at 82% 0,var(--ember-soft),transparent 32%),linear-gradient(180deg,var(--void-2),var(--void) 42%)}
+.links-page .wrap{position:relative;z-index:1;max-width:1120px;margin:auto;padding:0 32px 64px}
+.links-head{padding:clamp(64px,10vw,120px) 0 clamp(48px,7vw,78px)}
+.links-kicker{color:var(--ember)}
+.links-head h1{margin:1.25rem 0 0;font:600 clamp(4.8rem,13vw,10rem)/.78 var(--display);letter-spacing:-.075em}
+.links-head h1 em{font-family:var(--serif);font-weight:500;color:var(--paper-dim)}
+.links-lead{max-width:720px;margin:2rem 0 0;font:500 italic clamp(1.45rem,3vw,2.25rem)/1.18 var(--serif);color:var(--paper-dim)}
+.link-directory{border-top:1px solid var(--line-strong)}
+.platform-link{display:grid;grid-template-columns:72px minmax(0,1fr) auto;gap:1.5rem;align-items:center;min-height:116px;padding:1.2rem 0;border-bottom:1px solid var(--line);text-decoration:none;transition:padding .25s,background .25s,color .25s,border-color .25s}
+.platform-link:hover,.platform-link:focus-visible{padding-inline:1rem;background:rgba(255,255,255,.018);border-color:var(--ember)}
+.platform-no{font:500 .58rem var(--mono);letter-spacing:.15em;color:var(--ember)}
+.platform-copy strong{display:block;font:600 clamp(2rem,5vw,4.4rem)/.9 var(--display);letter-spacing:-.05em}
+.platform-copy small{display:block;margin-top:.65rem;font:400 clamp(1rem,1.5vw,1.18rem)/1.25 var(--serif);color:var(--ash)}
+.platform-action{display:flex;align-items:center;gap:1.1rem;font:500 .6rem var(--mono);text-transform:uppercase;letter-spacing:.15em;color:var(--ash)}
+.platform-action b{font:400 1rem var(--mono);color:var(--ember);transition:transform .25s}
+.platform-link:hover .platform-action b,.platform-link:focus-visible .platform-action b{transform:translate(3px,-3px)}
+.links-foot{display:flex;justify-content:space-between;gap:2rem;align-items:center;padding:42px 0 0;margin-top:68px;border-top:1px solid var(--line)}
+.links-foot a{font:600 1rem var(--display);text-decoration:none}
+.links-foot a:hover{color:var(--ember)}
+.links-foot span{color:#625f5b;text-align:right}
+@media(max-width:720px){.links-page .wrap{padding-inline:20px}.links-head{padding-top:54px}.platform-link{grid-template-columns:42px minmax(0,1fr);gap:.8rem;min-height:104px}.platform-action{grid-column:2;margin-top:.2rem}.platform-copy strong{font-size:clamp(2rem,11vw,3rem)}.links-foot{display:block}.links-foot span{display:block;margin-top:.65rem;text-align:left}}
