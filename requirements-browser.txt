@@ -1,0 +1,2 @@
+# Test tooling only. The published website has no package/runtime dependencies.
+playwright==1.57.0

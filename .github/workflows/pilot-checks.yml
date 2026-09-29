@@ -1,0 +1,49 @@
+name: Pilot checks (no deployment)
+on:
+  push:
+    branches: ['pilot/release-led-2026-09-29']
+  pull_request:
+    branches: [main]
+permissions:
+  contents: read
+concurrency:
+  group: pilot-checks-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Validate static content and preserve approved material
+        run: |
+          python3 tools/build_site.py --check
+          python3 -m unittest discover -s tests -v
+          node --check js/pilot.js
+          node --check js/pilot-field.js
+      - name: Install test-only browser tooling
+        run: |
+          python3 -m pip install -r requirements-browser.txt
+          python3 -m playwright install --with-deps chromium
+      - name: Browser checks over local HTTP
+        run: python3 tools/browser_check.py --out qa/browser
+      - name: Probe the exact-commit public preview
+        if: github.event_name == 'push'
+        run: python3 tools/check_preview.py --sha "$GITHUB_SHA" --out qa/preview-probe.json
+      - name: Upload browser evidence (no deployment)
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: pilot-browser-evidence-${{ github.sha }}
+          path: qa/
+          retention-days: 14
+          if-no-files-found: ignore
+      - name: Package exact public source (no Git configuration)
+        run: git archive --format=zip --output="$RUNNER_TEMP/faxto-source.zip" HEAD
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: faxto-source-${{ github.sha }}
+          path: ${{ runner.temp }}/faxto-source.zip
+          retention-days: 7

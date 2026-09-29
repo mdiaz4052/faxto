@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+$head
+</head>
+<body class="pilot home-pilot">
+<a class="skip" href="#main">Skip to the music</a>
+$preview
+$header
+<main id="main">
+  <section class="feature shell" aria-labelledby="feature-title">
+    <div class="feature-copy">
+      <p class="eyebrow"><span class="signal-dot" aria-hidden="true"></span> Featured $featured_kind <span class="feature-index">$featured_id / $featured_count $featured_track_label</span></p>
+      <h1 id="feature-title">$featured_title</h1>
+      <p class="feature-thesis">$featured_thesis</p>
+      <div class="actions">
+        <a class="action action-primary" href="$featured_listen" target="_blank" rel="noopener"><span><span aria-hidden="true">𝄞𝄢</span> Listen</span><span aria-hidden="true">↗</span><span class="sr-only"> to $featured_title via LANDR, opens a new tab</span></a>
+        <a class="action action-line" href="$featured_page">Explore the record <span aria-hidden="true">→</span></a>
+      </div>
+      <p class="feature-tagline">$tagline</p>
+      $secondary_record
+    </div>
+    <figure class="feature-art">
+      <a class="cover-frame" href="$featured_page" aria-label="Explore $featured_title"><img src="$featured_art" alt="$featured_alt" width="$featured_width" height="$featured_height" fetchpriority="high" decoding="async"></a>
+      <figcaption><span>$featured_title</span><span>$featured_id · FaXto</span></figcaption>
+    </figure>
+  </section>
+  <section class="catalog shell section" id="catalog" aria-labelledby="catalog-title">
+    <div class="section-top"><p class="eyebrow">01 / The catalog</p><p class="eyebrow">$catalog_counts</p></div>
+    <div class="catalog-heading"><h2 id="catalog-title">Records as<br><em>introspection.</em></h2>
+      <div class="catalog-controls"><div class="filters" role="group" aria-label="Filter releases" hidden>
+        <button type="button" data-filter="all" aria-pressed="true">All releases</button><button type="button" data-filter="album" aria-pressed="false">Albums</button><button type="button" data-filter="single" aria-pressed="false">Singles</button>
+      </div><p class="catalog-count" aria-live="polite" aria-atomic="true" data-catalog-count>$total_count releases</p></div>
+    </div>
+    <div class="album-grid catalog-group" data-group="album">$albums</div>
+    <div class="singles-heading" data-group="single"><h3>Ritual fragments.</h3><span class="eyebrow">The singles</span></div>
+    <div class="single-grid catalog-group" data-group="single">$singles</div>
+  </section>
+  <section class="invocation shell section" id="invocation" aria-labelledby="invocation-title">
+    <p class="eyebrow">02 / About FaXto</p>
+    <div class="invocation-grid">
+      <div class="invocation-copy"><h2 id="invocation-title">$invocation_heading<br><em>$invocation_emphasis</em></h2><p class="reading">$invocation_body</p></div>
+      <div class="field-panel">
+        <div class="cosmic-field" data-cosmic-field tabindex="0" role="group" aria-label="Interactive cosmic field" aria-describedby="field-help"><canvas aria-hidden="true"></canvas><noscript><p class="field-fallback">A subject of the<br><em>Grand Cosmic Void.</em></p></noscript></div>
+        <div class="field-toolbar" hidden><div class="field-modes" role="group" aria-label="Visual modes"><button type="button" data-cosmic-mode="0" aria-label="Visual mode 1" aria-pressed="true"><span></span></button><button type="button" data-cosmic-mode="1" aria-label="Visual mode 2" aria-pressed="false"><span></span></button><button type="button" data-cosmic-mode="2" aria-label="Visual mode 3" aria-pressed="false"><span></span></button></div><button type="button" class="motion-toggle" data-motion-toggle aria-pressed="false">Pause motion</button></div>
+        <p class="field-hint">Move · swipe · explore</p><p id="field-help" class="sr-only">Move the pointer to disturb the field. Swipe horizontally, choose a visual mode, or use the left and right arrow keys while the field is focused. Motion can be paused.</p>
+      </div>
+    </div>
+    <div class="tenets">$tenets</div>
+  </section>
+  <section class="method shell section" id="method" aria-labelledby="method-title"><p class="eyebrow">03 / On the machine</p><div class="method-grid"><h2 id="method-title">$method_heading<br><em>$method_emphasis</em></h2><div><p class="reading">$method_body</p><p class="method-sequence"><span>Idea</span><span aria-hidden="true">→</span><span>Machine</span><span aria-hidden="true">→</span><span>Choice</span></p></div></div></section>
+</main>
+$footer
+<script src="js/pilot.js" defer></script>
+<script src="js/pilot-field.js" defer></script>
+</body>
+</html>

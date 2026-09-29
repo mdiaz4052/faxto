@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "preview": true,
+  "featured": "sacrilegium",
+  "brand": {
+    "name": "FaXto",
+    "wordmark": null,
+    "symbol": null,
+    "tagline": "Liturgy despite the silence.",
+    "footer_line": "A subject of the Grand Cosmic Void."
+  },
+  "contact": "faxto.music@gmail.com",
+  "production_url": "https://faxto.music",
+  "profiles": {
+    "apple_music": "https://music.apple.com/us/artist/faxto/1882462363",
+    "spotify": "https://open.spotify.com/artist/7v3TDgyyH9nCWJHdAFY1kE",
+    "youtube": "https://youtube.com/@faxto-music",
+    "suno": "https://suno.com/@faxto"
+  },
+  "invocation": {
+    "heading": "Meaning is not found here.",
+    "emphasis": "It is declared.",
+    "body": "FaXto is absurdist in spirit and liturgical in form: sacred grammar carried through electronic, country, operatic, glitch, rock, and machine-made sound. Each record confronts faith, doubt, power, compassion, and the silence between them.",
+    "tenets": [
+      {
+        "title": "The Void",
+        "body": "No inherited purpose. No cosmic guarantee. The silence is the premise, not the conclusion."
+      },
+      {
+        "title": "The Revolt",
+        "body": "To choose love, justice, and meaning without pretending the universe supplied them."
+      },
+      {
+        "title": "The Ritual",
+        "body": "Religious forms are dismantled, reclaimed, and returned as human instruments."
+      }
+    ]
+  },
+  "method": {
+    "heading": "The machine is the instrument.",
+    "emphasis": "FaXto is the choosing.",
+    "body": "Compositions, arrangements, and voices are generated with Suno from written direction and lyrics, then selected, revised, sequenced, and framed into finished records. The authorship is not hidden; the tension between human intention and synthetic production belongs inside the work."
+  },
+  "secondary_featured": "nos-creemos-algo"
+}
