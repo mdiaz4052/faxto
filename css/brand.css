@@ -1,0 +1,13 @@
+/* Provisional identity. Replace tokens and the optional marks in content/site.json
+   when the commissioned branding is ready. These fonts already belong to this site. */
+@font-face{font-family:FaXto Title;src:url('../assets/f5865ae5-8b03-44bb-86e1-cfa712d46f3b.woff2') format('woff2');font-weight:400 900;font-display:swap}
+@font-face{font-family:FaXto Text;src:url('../assets/654bb3a8-86ad-48dc-8d4e-2f15656b61e9.woff2') format('woff2');font-weight:300 700;font-display:swap}
+@font-face{font-family:FaXto Text;src:url('../assets/8c2f89c2-c2fa-452d-8a94-636876032cfc.woff2') format('woff2');font-weight:300 700;font-style:italic;font-display:swap}
+@font-face{font-family:FaXto Mono;src:url('../assets/13a239a8-6e84-4913-bdff-ab5a50f94742.woff2') format('woff2');font-weight:400 800;font-display:swap}
+:root{
+ --ink:#0c0c0b;--surface:#151513;--paper:#eee9df;--soft:#c9c2b6;--muted:#a6a296;
+ --accent:#e5a37c;--line:#37362f;--quiet-line:#272722;
+ --font-title:'FaXto Title',Georgia,serif;--font-reading:'FaXto Text',Georgia,serif;
+ --font-label:'FaXto Mono',monospace;--font-ui:Arial,Helvetica,sans-serif;
+ --content-width:1360px;--gutter:clamp(22px,4.7vw,76px);--section-gap:clamp(76px,9vw,140px);
+}

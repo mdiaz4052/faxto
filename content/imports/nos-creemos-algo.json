@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "status": "candidate-metadata-reviewed-against-existing-release",
+  "retrieved_date": "2026-09-29",
+  "source_type": "Apple Music connected catalog search",
+  "query": "FaXto Nos Creemos Algo",
+  "storefront": "us",
+  "artistName": "FaXto",
+  "name": "Nos Creemos Algo - Single",
+  "album_id": "6800922335",
+  "url": "https://music.apple.com/us/album/nos-creemos-algo-single/6800922335",
+  "isSingle": true,
+  "isComplete": true,
+  "isPrerelease": false,
+  "trackCount": 1,
+  "releaseDate": "2026-08-12",
+  "upc": "991048761872",
+  "artwork": {
+    "url": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/a8/d2/c6/a8d2c65c-8dad-c103-d489-61d7b5039d1e/991048761872.png/{w}x{h}{c}.{f}",
+    "width": 3024,
+    "height": 3024
+  },
+  "tracks": [
+    {
+      "name": "Nos Creemos Algo",
+      "artistName": "FaXto",
+      "id": "6800922336",
+      "trackNumber": 1,
+      "discNumber": 1,
+      "isrc": "CAGOO2664363",
+      "durationInMillis": 97019
+    }
+  ],
+  "landr_url": "https://release.landr.com/nos-creemos-algo",
+  "landr_source": "Artist-supplied link, 2026-09-29",
+  "landr_fetch_status": "not-retrievable-in-initial-web-check",
+  "verification": {
+    "existing_release": "releases/nos-creemos-algo.html",
+    "title_and_artist_match": true,
+    "complete_track_count": true,
+    "artist_profile_id_returned": false,
+    "review_note": "Release title, artist, one-track structure and Spanish-language track agree with the existing approved site. Search also returned unrelated artists; those were excluded. No automatic new-release approval is performed."
+  },
+  "application": {
+    "listen_url": "Applied artist-supplied LANDR URL to existing release",
+    "artwork": "Retained existing repository image; remote artwork not downloaded",
+    "lyrics_and_story": "Preserved existing approved text verbatim",
+    "external_metadata": "Candidate receipt only; no unverified store links or album interpretation published"
+  }
+}

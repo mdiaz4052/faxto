@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+$head
+</head>
+<body class="pilot record-pilot">
+<a class="skip" href="#main">Skip to the record</a>
+$preview
+$header
+<main class="shell release-shell" id="main">
+  <a class="back-link" href="../index.html#catalog"><span aria-hidden="true">←</span> All releases</a>
+  <article class="release-layout" aria-labelledby="release-title">
+    <header class="release-intro"><p class="eyebrow">$catalog_id / $kind_label · $track_count $track_label</p><h1 id="release-title">$title</h1><p class="record-thesis" lang="$language">$blurb</p><nav class="record-jumps" aria-label="On this record"><a href="$listen" target="_blank" rel="noopener"><span aria-hidden="true">𝄞𝄢</span> Listen <span aria-hidden="true">↗</span><span class="sr-only"> via LANDR, opens a new tab</span></a><a href="#tracks">Tracks &amp; lyrics <span aria-hidden="true">↓</span></a><a href="#story">Story <span aria-hidden="true">↓</span></a></nav></header>
+    <aside class="release-sleeve" aria-label="Artwork and listening"><figure><div class="cover-frame"><img src="../$art" alt="$alt" width="$width" height="$height" fetchpriority="high" decoding="async"></div><figcaption><span>$catalog_id · $kind_label</span><span>FaXto</span></figcaption></figure><a class="action action-primary" href="$listen" target="_blank" rel="noopener"><span><span aria-hidden="true">𝄞𝄢</span> Listen via LANDR</span><span aria-hidden="true">↗</span><span class="sr-only">, opens a new tab</span></a><p class="listening-note">Choose your preferred listening service.</p></aside>
+    <div class="release-editorial"><section class="track-section" id="tracks" aria-labelledby="tracks-title"><div class="small-section-heading"><h2 id="tracks-title">Tracks &amp; lyrics</h2><span class="eyebrow">$track_count $track_label</span></div><ol class="tracklist">$tracks</ol></section>
+      <section class="story-section" id="story" aria-labelledby="story-title"><p class="eyebrow">Liner notes</p><h2 id="story-title">Inside the record.</h2><div class="story-copy reading">$story</div></section>
+    </div>
+  </article>
+  <nav class="record-navigation" aria-label="Release navigation">$previous$next</nav>
+</main>
+$footer
+<script src="../js/pilot.js" defer></script>
+</body>
+</html>

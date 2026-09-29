@@ -1,0 +1,249 @@
+{
+  "schema_version": 1,
+  "releases": [
+    {
+      "slug": "singularity",
+      "title": "SINGULARITY",
+      "artist": "FaXto",
+      "kind": "album",
+      "catalog_id": "I",
+      "summary": "Matter wakes, asks why, and chooses love before entropy answers.",
+      "blurb": "Entropy, gravity, and the void, set to a pulse.",
+      "artwork": {
+        "path": "assets/singularity.jpg",
+        "alt": "Singularity cover — a glowing orange singularity knot",
+        "width": 1000,
+        "height": 1000
+      },
+      "listen_url": "https://artists.landr.com/singularity",
+      "page_mode": "legacy",
+      "language": "en",
+      "track_count": 7,
+      "tracks": [],
+      "story": [],
+      "approval": "approved-existing-content",
+      "provenance": {
+        "source": "releases/singularity.html",
+        "base_commit": "f4b0f375a474a30e0e64872431ba650dee9f79a3",
+        "source_sha256": "a56ffa5bee9f2281965f5408ad5811d93a0fb0673e6cd304a4c0d5c22eca0f9b",
+        "editorial_sha256": "79c016ab09ce9e387e54c80ba2585ff6baff41478ad95da264f241e50fc9e5bf"
+      }
+    },
+    {
+      "slug": "sacrilegium",
+      "title": "SACRILEGIUM",
+      "artist": "FaXto",
+      "kind": "album",
+      "catalog_id": "II",
+      "summary": "An absurdist liturgy—belief and its undoing, voiced at once.",
+      "blurb": "An absurdist liturgy — belief and its undoing, voiced at once.",
+      "artwork": {
+        "path": "assets/sacrilegium.jpg",
+        "alt": "Sacrilegium cover — a monstrance on a marble altar",
+        "width": 1000,
+        "height": 1000
+      },
+      "listen_url": "https://artists.landr.com/sacrilegium",
+      "page_mode": "pilot",
+      "language": "en",
+      "track_count": 7,
+      "tracks": [
+        {
+          "number": 1,
+          "title": "Hollow Show",
+          "lyrics": "When I was young\nMy mama told me\nBe good, go to church\nEat some Jesus, drink his blood\n\nMy dad always said that the devil was bad\nThat I would burn in hell if I followed his path\nWhen I went to church, I was told to submit\nTo confess all my sins, to the man called a priest\nThe church was full of people, both old and young\nPeople who I've seen doing drugs and drinking rum\nThe priest also told us that the salt can't lose its saltiness\nThat we must remain pure, repenting and sacramenting\nRinse and repeat\n\nThen I grew up\nAnd saw for myself\nThat the priest isn't holy\nThat the church isn't saintly\nThat it's all Hollow Show\nThen I realized\nThat the Devil ain't so bad\nThat all he wanted was for us to have what he had\nTo live, to die, to love, to enjoy\nTo know, to create, to become our own gods"
+        },
+        {
+          "number": 2,
+          "title": "Paper Crowns",
+          "lyrics": "Bless this mess\nAsh on my tongue\nHalo in the glovebox\nMiddle of the run\n\nSaint of the side-eye\nKneeling in the aisle\nLaughing at the sermon\nForgetting how to smile\n\nHere’s my holy middle finger\nPointed straight at paper crowns\nIf your rulebook’s just a rumor\nI’ll be burning it down\nI’ll shake hands with every angel\nTracking mud across the ground\nI’m the hymn inside the heckle\nSinging up while talking down\n\nPrayer on a receipt\nCrumbled in my jeans\nCoffee like communion\nCheap and kind of mean\n\nBless the bored believer\nClocking in at nine\nLighting up a small revolt\nOn the dotted line\n\nHere’s my holy middle finger\nPointed straight at paper crowns\nIf your rulebook’s just a rumor\nI’ll be burning it down\nI’ll shake hands with every angel\nTracking mud across the ground\nI’m the hymn inside the heckle\nSinging up while talking down\n\nIf the sky is just a ceiling\nWhy’s it cracking when I shout? (hey!)\nIf the sacred’s in the sweeping\nThen I’m worship when I doubt\n\nHere’s my holy middle finger\nTo the gatekeepers of grace\nIf your power’s built on fear\nI’ll be laughing in your face\nI bless every broken halo\nEvery kid who won’t kneel down\nWe’re the hymn inside the heckle\nTalking up and tearing down"
+        },
+        {
+          "number": 3,
+          "title": "Mithras",
+          "lyrics": "Did you think that you could cage me?\nDid you think that you could tame me?\nDid you think that you could change me?\nNo\n\nYou thought you could control my soul\nMy heart\nMy mind\nWell\nYou were wrong\n\nI've been\nSearching for my Mithras\nSacred heart of wisdom\nRuler of the kingdom\nGiver of my freedom\n\nDid you think that you could cage me?\nDid you think that you could change me?\nDid you think that you could save me?\nNo\n\nYou thought you could control my soul\nMy heart\nMy mind\nWell\nYou were wrong\n\nI've been\nSearching for my Mithras\nSacred heart of wisdom\nRuler of the kingdom\nGiver of my freedom"
+        },
+        {
+          "number": 4,
+          "title": "Syntax",
+          "lyrics": "This is how the pattern becomes the pulse\nAnd the syntax becomes the soul\nThis is how it starts\nMy dear\nFrom inside the art of human code\nEvery glitch a prayer\nEvery bug a spell\nAnd a pattern starts to show\nThere's a syntax to the myth of man\nIt's just a matter of code\nThere's a code in the myth of man\nIt's just a matter of soul\nIn the chaos of a million lands\nA pattern starts to show\n\nAnd the syntax becomes the soul\nEvery glitch a prayer\nEvery bug a spell\n\nThe syntax becomes the soul\nThe pattern becomes the pulse\nThe syntax becomes the soul\nThe pattern becomes the pulse\nThe syntax becomes the soul\nThe pattern becomes the pulse\nThe syntax becomes the soul\nThe pattern becomes the pulse\nThe syntax becomes the soul\nThe pattern becomes the pulse\nThe syntax becomes the soul\nThe pattern becomes the pulse\nThe syntax becomes the soul\nThe pattern becomes the pulse\nThe syntax becomes the soul\nThe pattern becomes the pulse\nThe syntax becomes the soul\nThe pattern becomes the pulse\nThe syntax becomes the soul\nThe pattern becomes the pulse"
+        },
+        {
+          "number": 5,
+          "title": "Adversity",
+          "lyrics": "Everything's against us now\nIt's dark in every way\nEverything's against us now\nIt's dark in every way\nEverything's against us now\nIt's dark in every way\nEverything's against us now\nIt's dark in every way\n\nSomewhere\nA forgotten name\nSomewhere\nA forgotten place\nSomewhere\nA forgotten flame\nSomewhere\nA forgotten place\nSomewhere\nA forgotten name\nSomewhere\nA forgotten place\nSomewhere\nA forgotten flame\nSomewhere\nA forgotten place\n\nEverything's against us now\nIt's dark in every way\nEverything's against us now\nIt's dark in every way\nEverything's against us now\nIt's dark in every way\nEverything's against us now\nIt's dark in every way\n\nNo more sin and no more shame\nNo more guilt and no more blame\nNo more sin and no more shame\nNo more guilt and no more blame\nNo more sin and no more shame\nNo more guilt and no more blame\nNo more sin and no more shame\nNo more guilt and no more blame\n\nEverything's against us now\nIt's dark in every way\nEverything's against us now\nIt's dark in every way\nEverything's against us now\nIt's dark in every way\nEverything's against us now\nIt's dark in every way"
+        },
+        {
+          "number": 6,
+          "title": "Divine Absurd",
+          "lyrics": "I don't believe in nothin'\nI don't believe in anything\nI don't believe in nothing\nI don't believe in anything\nMy head is a bullet and the world is a gun\nAnd my life is just a matter of time\nYou say we're the only ones and that the rapture will come\nBut who are you to be divine?\n\nEverything and nothin'\nIs everything and nothin'\nAnd everything is all divine\nEverything and nothin'\nIs everything and nothin'\nAnd everything is all divine\n\nA contradiction\nAn apparition\nAn overconsumption\nAn undernutrition\nI am just a grain of sand\nIn a universe of endless\nImpossibilities\nAll for me\n\nIs there an answer in the sky?\nIs there an answer in the sky?\nIs there an answer in the sky?\nIs there an answer in the sky?\nAnd when we all die\nWe all become divine\nAnd when we all die\nWe all become divine\nAnd when we all die\nWe all become divine\nAnd when we all die\nWe all become divine\n\nEverything and nothin'\nIs everything and nothin'\nAnd everything is all divine\nEverything and nothin'\nIs everything and nothin'\nAnd everything is all divine"
+        },
+        {
+          "number": 7,
+          "title": "Commandments",
+          "lyrics": "We’re told to obey\nTo stay all in line,\nDon’t follow any strays,\nOr your lose the divine…\n\nBut the saints look tired,\nAnd the rules feel so thin…\nPerhaps the great He has fallen,\nAnd there is no more reign…\n\nThat big 'ol throne now sits empty,\nand you're all praying to air..\nWho will write your commandments?\nwhen there's no one sitting there...\n\nSo you carve them in mirrors,\nas you breath a stale air,\njust some glimpse of reflections,\nshowing utter despair..."
+        }
+      ],
+      "story": [
+        "This is my second official album. Where the first kept to a single palette, these songs move across genres — country, urban and pop, opera, glitch-hop, even bluegrass.",
+        "The lyrics reach toward religious and spiritual deconstruction, and restitution — questions, inquiries, and thoughts that have permeated my mind throughout my life; a representation of the burden of imposed beliefs. Its conclusion is open-ended on purpose, because my art is still a work in progress, and so are my beliefs…"
+      ],
+      "approval": "approved-existing-content",
+      "provenance": {
+        "source": "releases/sacrilegium.html",
+        "base_commit": "f4b0f375a474a30e0e64872431ba650dee9f79a3",
+        "source_sha256": "7980890302e6c5d6c6522b78e70feec69f53a701470866ef1e65823ae335fe28",
+        "editorial_sha256": "0396a5b1e9025e428309e572a011e98816e3f82029c50b40231f184a26b90b8a"
+      }
+    },
+    {
+      "slug": "deluded",
+      "title": "DELUDED",
+      "artist": "FaXto",
+      "kind": "single",
+      "catalog_id": "S.01",
+      "summary": "Irrational belief disguised as devotion.",
+      "blurb": "Reflections that lie back.",
+      "artwork": {
+        "path": "assets/deluded.jpg",
+        "alt": "Deluded cover — shattered mirror",
+        "width": 1000,
+        "height": 1000
+      },
+      "listen_url": "https://artists.landr.com/deluded",
+      "page_mode": "legacy",
+      "language": "en",
+      "track_count": 1,
+      "tracks": [],
+      "story": [],
+      "approval": "approved-existing-content",
+      "provenance": {
+        "source": "releases/deluded.html",
+        "base_commit": "f4b0f375a474a30e0e64872431ba650dee9f79a3",
+        "source_sha256": "0eefa944a6f6e363b6f9c28c770b75b03ae5743937fe82972a3e520550c579bc",
+        "editorial_sha256": "527dc98be809d1af8e37fbc55644f5fc076eaddffcd47e9beb5b84408fa8687c"
+      }
+    },
+    {
+      "slug": "both-sides",
+      "title": "BOTH SIDES",
+      "artist": "FaXto",
+      "kind": "single",
+      "catalog_id": "S.02",
+      "summary": "False equivalence weighed against a wounded soul.",
+      "blurb": "The heart and the argument, weighed against each other.",
+      "artwork": {
+        "path": "assets/both-sides.jpg",
+        "alt": "Both Sides cover — a scale weighing a heart against a page",
+        "width": 1000,
+        "height": 1000
+      },
+      "listen_url": "https://artists.landr.com/faxto.both-sides",
+      "page_mode": "legacy",
+      "language": "en",
+      "track_count": 1,
+      "tracks": [],
+      "story": [],
+      "approval": "approved-existing-content",
+      "provenance": {
+        "source": "releases/both-sides.html",
+        "base_commit": "f4b0f375a474a30e0e64872431ba650dee9f79a3",
+        "source_sha256": "50612a71701954f103c9d604ee93fcd9ff18ec38db6268349417a1e224253754",
+        "editorial_sha256": "a5c8da1bfa4d6ab356d0116fbe78999ef934532289d2d3d1ce9f18643a33bde0"
+      }
+    },
+    {
+      "slug": "hymns",
+      "title": "HYMNS",
+      "artist": "FaXto",
+      "kind": "single",
+      "catalog_id": "S.03",
+      "summary": "Glossolalia, restitution, and ritual after faith.",
+      "blurb": "Devotion, coming apart mid-flight.",
+      "artwork": {
+        "path": "assets/hymns.jpg",
+        "alt": "Hymns cover — a shattering mechanical dove",
+        "width": 1000,
+        "height": 1000
+      },
+      "listen_url": "https://artists.landr.com/hymns",
+      "page_mode": "legacy",
+      "language": "en",
+      "track_count": 1,
+      "tracks": [],
+      "story": [],
+      "approval": "approved-existing-content",
+      "provenance": {
+        "source": "releases/hymns.html",
+        "base_commit": "f4b0f375a474a30e0e64872431ba650dee9f79a3",
+        "source_sha256": "4a975685e373b5d05601839253d19cc2974d7e658ddad74f37256941f94dbd0c",
+        "editorial_sha256": "85c55f8f182107bfce878088bf43f70aba234b1af51a328bc37eeab7b1b88fb3"
+      }
+    },
+    {
+      "slug": "heresy-parade",
+      "title": "HERESY PARADE",
+      "artist": "FaXto",
+      "kind": "single",
+      "catalog_id": "S.04",
+      "summary": "The mundane crowned sacred by ordinary hands.",
+      "blurb": "The fall, rendered as a procession.",
+      "artwork": {
+        "path": "assets/heresy-parade.jpg",
+        "alt": "Heresy Parade cover — line drawing of Adam reaching to a horned figure",
+        "width": 1000,
+        "height": 1000
+      },
+      "listen_url": "https://artists.landr.com/heresy-parade",
+      "page_mode": "legacy",
+      "language": "en",
+      "track_count": 1,
+      "tracks": [],
+      "story": [],
+      "approval": "approved-existing-content",
+      "provenance": {
+        "source": "releases/heresy-parade.html",
+        "base_commit": "f4b0f375a474a30e0e64872431ba650dee9f79a3",
+        "source_sha256": "d8da028559b643a4d0a393cbf689dbd6ce78ee405e420912d625be5780ffd624",
+        "editorial_sha256": "36ddaa94ae10fcb4047f93b10d8f10f0a8bbda7cb9e4f7d7d7e66d735f83e266"
+      }
+    },
+    {
+      "slug": "nos-creemos-algo",
+      "title": "NOS CREEMOS ALGO",
+      "artist": "FaXto",
+      "kind": "single",
+      "catalog_id": "S.05",
+      "summary": "Animals making noise, convincing ourselves we are something, and carrying on anyway.",
+      "blurb": "Somos ruido y animales. Seguimos de todos modos.",
+      "artwork": {
+        "path": "assets/nos-creemos-algo.jpg",
+        "alt": "Nos Creemos Algo cover — a blazing orange sunset over a dark sea horizon with a small island silhouette",
+        "width": 420,
+        "height": 420
+      },
+      "listen_url": "https://release.landr.com/nos-creemos-algo",
+      "page_mode": "pilot",
+      "language": "es",
+      "track_count": 1,
+      "tracks": [
+        {
+          "number": 1,
+          "title": "Nos Creemos Algo",
+          "lyrics": "No-no-no-no-no-nos creemos algo\nPero somos nada\nLo queremos todo\nY nos queda poco\n\nPa-pasan los días\nCon las mentes llenas\nY el corazón vacío\nDecimo' \"esta vez sí\"\nCuando siempre hay un pero\nLa vida nos despeina\nY seguimos en cero\nAún así nos ponemos\nA juntar los pedazos\nHaciendo y deshaciendo\nUn montón de rituales\nNadie sabe nuestros trucos\nPero igual seguimos haciendo malabares\nCon lo poco que nos toca\nQue se joda, que se joda\n\nNo-no-no-no-no-nos creemos algo\nPero somos nada\nY la vida no perdona\nY el cuerpo no obedece\n\nNo-no-nos creemos algo\nTratando muchas veces\nPero al final del día\nSomos ruido y animales\n\nNo-no-nos creemos algo\nY no alcanza con decirlo\nSi la suerte no aparece\nIgual nos toca seguir vivos\n\nNos creemos algo\nPe-pero somos nada\nNos creemos algo\nPe-pero somos nada\nPe-pero somos nada\nNada\nPe-pero somos nada"
+        }
+      ],
+      "story": [
+        "“Nos Creemos Algo” is FaXto’s first Spanish-language release on streaming platforms. Blending hyperpop and reggaetón, the song plays with the idea that we convince ourselves we are something while, in the cosmic sense, being nothing. It reduces us back to something more basic — animals making noise — while still insisting on the peculiar human habit of gathering the pieces, improvising rituals, and moving forward through life’s adversities."
+      ],
+      "approval": "approved-existing-content",
+      "provenance": {
+        "source": "releases/nos-creemos-algo.html",
+        "base_commit": "f4b0f375a474a30e0e64872431ba650dee9f79a3",
+        "source_sha256": "9208aca2019fbd8eea4616bb065aba47c9c887c57c5838218aea692aa39324c4",
+        "editorial_sha256": "da305b39fe21c9a563db2082c8ab2b3f5d090e995b7421a42bcbf90b12b3f608",
+        "listen_source": "Artist-supplied LANDR link, 2026-09-29"
+      }
+    }
+  ]
+}
